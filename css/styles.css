@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark--gray: hsl(0, 0%, 63%);
+    --black: hsl(0, 0%, 0%);
+    --white: hsl(0, 0%, 100%);
+    --very-dark-gray: hsl(0, 0%, 27%);
+}
+
+body {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 12px;
+}
+
+.main {
+    display: grid;
+    max-width: 90em;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, max-width);
+    grid-template-areas: 
+    "main"
+    "cta"
+    "image1"
+    "about"
+    "image2"
+    ;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 1.875em;
+}
+
+.main__hero {
+    grid-area: main;
+    background-image: url('../images/desktop-image-hero-1.jpg');
+    min-height: 31.25em;
+    background-size: cover;
+    background-position: center;
+}
+
+.main__nav {
+    display: flex;
+}
+
+.main__links {
+    display: none;
+}
+
+.main__logo {
+    margin: 0 auto;
+}
+
+.main__controls {
+    grid-area: main;
+    align-self: end;
+    justify-self: end;
+    background-color: var(--black);
+    width: 7.5em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main__control {
+    padding: 1em 0;
+    height: 30%;
+    display: block;
+}
+
+.main__buy {
+    grid-area: cta;
+    margin: 1em 0 3em;
+}
+
+.main__content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main__title {
+    color: var(--black);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.main__paragraph {
+    line-height: 1.5;
+    margin: 1.5em 0 3em 0;
+    color: var(--dark--gray);
+}
+
+.main__cta {
+    text-decoration: none;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.main__arrow {
+    margin-left: 1.25em;
+}
+
+.main__bg {
+    grid-area: image1;
+    background-image: url('../images/image-about-dark.jpg');
+    min-height: 21.875em;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.main__about {
+    grid-area: about;
+}
+
+.main__title--about {
+    margin-top: 1em;
+    font-size: 1.2rem;
+}
+
+.main__paragraph--about {
+    margin: 1.5em 0 1.5em 0;
+}
+
+.main__bg--second {
+    grid-area: image2;
+    background-image: url('../images/image-about-light.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+@media (min-width: 768px) {
+
+    .container {
+        width: 85%;
+        padding: 4.375em 0;
+    }
+
+    .main {
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-areas:
+        "main main main main cta cta cta"
+        "main main main main cta cta cta"
+        "main main main main cta cta cta"
+        "image1 image1 about about about image2 image2"
+        "image1 image1 about about about image2 image2"
+        ;
+    }
+
+    .main__controls {
+        grid-area: about;
+    }
+}
