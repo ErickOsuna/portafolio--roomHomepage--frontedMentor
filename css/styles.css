@@ -76,7 +76,7 @@ body {
     display: none;
 }
 
-.main__links--menu {
+/* .main__links--menu {
     position: fixed;
     background-color: var(--white);
     top: 0;
@@ -93,7 +93,7 @@ body {
     content: url(../images/icon-close.svg);
     margin-right: 4em;
     margin-left: 1em;
-}
+} */
 
 .main__link {
     color: var(--black);
