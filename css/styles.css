@@ -24,12 +24,12 @@ body {
     margin: 0 auto;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, max-width);
-    grid-template-areas: 
-    "main"
-    "cta"
-    "image1"
-    "about"
-    "image2"
+    grid-template-areas:
+        "main"
+        "cta"
+        "image1"
+        "about"
+        "image2"
     ;
 }
 
@@ -64,11 +64,18 @@ body {
     min-height: 31.25em;
     background-size: cover;
     background-position: center;
-    transition: .3s;
 }
 
 .main__nav {
     display: flex;
+}
+
+.main__hamburguer {
+    cursor: pointer;
+}
+
+.main__list {
+    cursor: pointer;
 }
 
 .main__links {
@@ -76,7 +83,7 @@ body {
     display: none;
 }
 
-/* .main__links--menu {
+.main__links--menu {
     position: fixed;
     background-color: var(--white);
     top: 0;
@@ -86,14 +93,13 @@ body {
     display: flex;
     gap: .5em;
     justify-content: space-around;
-    align-items: center
+    align-items: center;
+    display: none;
 }
 
-.main__links--menu::before {
-    content: url(../images/icon-close.svg);
-    margin-right: 4em;
-    margin-left: 1em;
-} */
+.main__links--show {
+    display: flex;
+}
 
 .main__link {
     color: var(--black);
@@ -101,6 +107,7 @@ body {
     text-decoration: none;
     text-transform: lowercase;
     font-weight: 700;
+
 }
 
 .main__logo {
@@ -112,7 +119,9 @@ body {
 }
 
 .main__link:active {
-    text-decoration: underline;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: var(--white);
 }
 
 .main__controls {
@@ -201,6 +210,9 @@ body {
     background-position: center;
 }
 
+
+/* DESKTOP */
+
 @media (min-width: 768px) {
 
     .container {
@@ -211,11 +223,11 @@ body {
     .main {
         grid-template-columns: repeat(7, 1fr);
         grid-template-areas:
-        "main main main main cta cta cta"
-        "main main main main cta cta cta"
-        "main main main main cta cta cta"
-        "image1 image1 about about about image2 image2"
-        "image1 image1 about about about image2 image2"
+            "main main main main cta cta cta"
+            "main main main main cta cta cta"
+            "main main main main cta cta cta"
+            "image1 image1 about about about image2 image2"
+            "image1 image1 about about about image2 image2"
         ;
         margin: 3.5em auto;
     }
@@ -241,13 +253,21 @@ body {
     .main__hamburguer {
         display: none;
     }
+    
+    .main__links--menu::before {
+        display: none;
+    }
 
-    .main__links {
+    .main__links--menu {
+        display: flex;
+        background-color: transparent;
+        position: relative;
         padding: 0;
-        display: grid;
-        grid-auto-flow: column;
-        gap: 1em;
-        margin-left: 10%;
+        margin: 0;
+        height: auto;
+        justify-content: flex-start;
+        gap: 2em;
+        margin-left: 20%;
     }
 
     .main__logo {
@@ -261,11 +281,19 @@ body {
 
     .main__list {
         list-style: none;
+        padding: 0;
+        margin: 0;
     }
 
     .main__link {
         text-decoration: none;
         color: var(--white);
         font-weight: 500;
+        padding: 0;
+        margin: 0;
+    }
+
+    .main__link--x {
+        display: none;
     }
 }
